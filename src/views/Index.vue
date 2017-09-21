@@ -11,14 +11,25 @@
       <template slot="tabs-2">tabs-2-content</template>
       <template slot="tabs-3">tabs-3-content</template>
     </tab-change>
+    <h3>分页：</h3>
+    <pagination :pagination="paginateOption"></pagination>
   </div>
 </template>
 <script>
   import TabChange from '../components/TabChange.vue'
+  import Pagination from '../components/Pagination.vue'
   export default {
     name: 'index',
+    data () {
+      return {
+        paginateOption: {
+          totalPage: 20
+        }
+      }
+    },
     components: {
-      TabChange
+      TabChange,
+      Pagination
     }
   }
 </script>
